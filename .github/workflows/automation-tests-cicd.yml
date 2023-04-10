@@ -1,0 +1,42 @@
+name: Espresso tests
+
+on: 
+  pull_request:
+    branches:
+      - 'development'
+      - 'stage'
+      - 'rp-story/automation-test'
+  workflow_dispatch:
+    
+jobs:
+  espresso:
+<<<<<<< HEAD
+    runs-on: ubuntu-latest
+=======
+    runs-on: macos-latest
+>>>>>>> 2ae9b44a28b4897e5d9bd27ec1b80dc9ad9e4750
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+ 
+    - name: Set up JDK
+      uses: actions/setup-java@v1
+      with:
+        java-version: '11'
+        
+    - name: Build debug APK
+      run: ./gradlew assembleDebug
+<<<<<<< HEAD
+      
+=======
+    
+    - name: run tests
+      uses: reactivecircus/android-emulator-runner@v2
+      with:
+        api-level: 30
+        script: ./gradlew connectedCheck
+    
+>>>>>>> 2ae9b44a28b4897e5d9bd27ec1b80dc9ad9e4750
+    - name: Run Espresso tests
+      run: ./gradlew connectedAndroidTest

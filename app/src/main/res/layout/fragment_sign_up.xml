@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bgColor"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".ui.fragments.signup.SignUpFragment">
+
+    <ImageButton
+        android:id="@+id/btnNav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:background="@null"
+        android:layout_marginTop="40dp"
+        android:contentDescription="TODO"
+        android:gravity="left"
+        android:onClick="signUpBackTo"
+        android:src="@drawable/post_for_you_back_stack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription,HardcodedText,RtlHardcoded,UsingOnClickInXml" />
+
+
+    <TextView
+            android:id="@+id/signUpTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:lineHeight="@dimen/signUp_title_height"
+            android:padding="15dp"
+            android:text="@string/signUp_heading"
+            android:textColor="@color/white"
+            android:textFontWeight="700"
+            android:textSize="@dimen/signUp_title_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/signUpMobileId"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="15dp"
+            android:backgroundTint="@color/postSectionCardBgColor"
+            android:drawableLeft="@drawable/baseline_local_phone_24"
+            android:gravity="center"
+            android:lineHeight="@dimen/signUp_btn_height"
+            android:onClick="signUpMobileOnClick"
+            android:text="@string/signUpText"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/signUp_btn_size"
+            app:layout_constraintTop_toBottomOf="@+id/signUpTitle"
+            tools:ignore="UsingOnClickInXml,VisualLintButtonSize"
+            tools:layout_editor_absoluteX="15dp" />
+
+
+        <TextView
+            android:id="@+id/disclaimerTxtId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"
+            android:text="@string/disclaimerTxt"
+            android:textColor="@color/descTextColor"
+            android:textColorHighlight="@color/bgColor"
+            app:layout_constraintBottom_toTopOf="@+id/alreadySignTxtId"
+            app:layout_constraintTop_toBottomOf="@+id/signUpMobileId"
+            android:lineHeight="@dimen/disclaimerTxtHeight"
+            android:textSize="@dimen/disclaimerTxtSize"
+            app:layout_constraintVertical_bias="0.99" />
+
+        <TextView
+            android:id="@+id/alreadySignTxtId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="35dp"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:text="@string/alreadyLoginTxt"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <View
+            android:id="@+id/signUpDividerId"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginHorizontal="20dp"
+            android:background="?android:attr/listDivider"
+            android:backgroundTint="@color/white"
+            android:foregroundGravity="center"
+            app:layout_constraintBottom_toTopOf="@+id/alreadySignTxtId"
+            app:layout_constraintTop_toBottomOf="@+id/disclaimerTxtId" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>

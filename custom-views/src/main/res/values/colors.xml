@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="errorColor">#FFEC324B</color>
+    <color name="signUpTxtInputBorder">#FFFF22C6</color>
+    <color name="textColor">#FF9D9D9D</color>
+    <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">#FFFF22C6</color>
+</resources>

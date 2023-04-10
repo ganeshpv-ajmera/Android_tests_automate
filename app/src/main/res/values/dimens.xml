@@ -1,0 +1,63 @@
+<resources>
+    <!-- sizes -->
+    <dimen name="zero">0dp</dimen>
+    <dimen name="toolbar_elevation">2dp</dimen>
+
+    <!-- spacing -->
+    <dimen name="spacing_zero">0dp</dimen>
+    <dimen name="spacing_one">1dp</dimen>
+    <dimen name="spacing_two">2dp</dimen>
+    <dimen name="spacing_xxs">4dp</dimen>
+    <dimen name="spacing_xs">6dp</dimen>
+    <dimen name="spacing_s">8dp</dimen>
+    <dimen name="spacing_m">10dp</dimen>
+    <dimen name="spacing_l">12dp</dimen>
+    <dimen name="spacing_xl">14dp</dimen>
+    <dimen name="spacing_xxl">16dp</dimen>
+    <dimen name="spacing_xxxl">18dp</dimen>
+    <dimen name="spacing_larger">24dp</dimen>
+    <dimen name="margin_large">32dp</dimen>
+
+    <!-- text sizes -->
+    <dimen name="size_xs">10sp</dimen>
+    <dimen name="size_s">12sp</dimen>
+    <dimen name="size_m">14sp</dimen>
+    <dimen name="size_l">16sp</dimen>
+    <dimen name="size_xl">18sp</dimen>
+    <dimen name="size_xxxxl">32sp</dimen>
+
+    <!-- image sizes -->
+    <dimen name="crisis_line_phone_icon">30dp</dimen>
+    <dimen name="header">100dp</dimen>
+    <dimen name="icon">40dp</dimen>
+    <dimen name="icon_button">40dp</dimen>
+    <dimen name="icon_service">50dp</dimen>
+    <dimen name="min_button_size">100dp</dimen>
+    <dimen name="button_size">100dp</dimen>
+    <dimen name="button_radius">8dp</dimen>
+
+    <!--SignUp Screen-->
+    <dimen name="signUp_title_size">32sp</dimen>
+    <dimen name="signUp_title_height">42sp</dimen>
+    <dimen name="signUp_btn_size">20sp</dimen>
+    <dimen name="signUp_btn_height">24sp</dimen>
+    <dimen name="disclaimerTxtSize">14sp</dimen>
+    <dimen name="disclaimerTxtHeight">24sp</dimen>
+    <dimen name="signUpTitleTxtSize">24sp</dimen>
+    <dimen name="signup_title_txt_height">30sp</dimen>
+    <dimen name="signup_txt_size">18sp</dimen>
+    <dimen name="signup_txt_height">20sp</dimen>
+    <dimen name="signUp_margin_horizontal">20dp</dimen>
+    <dimen name="input_txt_size">18sp</dimen>
+    <dimen name="input_txt_height">24sp</dimen>
+
+    <!-- Top navigation with title for handling back stack navigation-->
+    <dimen name="backStackTopMargin">30dp</dimen>
+    <dimen name="policyTermsTopMargin">23dp</dimen>
+
+    <!--Dimension for OTP view-->
+    <dimen name="otp_width">60dp</dimen>
+    <dimen name="otp_height">65dp</dimen>
+    <dimen name="h2_txt_size">32sp</dimen>
+    <dimen name="h2_txt_line_height">40sp</dimen>
+</resources>

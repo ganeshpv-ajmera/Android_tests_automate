@@ -1,0 +1,112 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id "androidx.navigation.safeargs.kotlin"
+}
+
+apply from: "../dependencies.gradle"
+
+android {
+    namespace 'com.aop.interplay'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.aop.interplay"
+        minSdk 21
+        targetSdk 33
+        versionCode 18
+        versionName "0.2.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    flavorDimensions("default")
+    productFlavors {
+
+        dev {
+            applicationIdSuffix = ".dev"
+            versionNameSuffix = "-dev"
+            manifestPlaceholders = [appLabel: "AOP_dev"]
+        }
+        stage {
+            applicationIdSuffix = ".stage"
+            versionNameSuffix = "-stage"
+            manifestPlaceholders = [appLabel: "AOP_stage"]
+        }
+        prod {
+            applicationId "com.aop.interplay"
+            manifestPlaceholders = [appLabel: "AOP"]
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation project(':custom-views')
+    implementation project(':data')
+    implementation project(':player')
+    implementation project(':network')
+
+    implementation supportDependencies.coreKtx
+    implementation supportDependencies.appCompat
+    implementation supportDependencies.material
+    implementation supportDependencies.constraintlayout
+    implementation lifeCycleLibraries.lifeCycleExtension
+    implementation lifeCycleLibraries.liveData
+    implementation lifeCycleLibraries.viewmodel
+    implementation navigationLibraries.navigation
+    implementation navigationLibraries.navigationUi
+    implementation imageLibraries.glide
+    implementation dependencyInjectionLibraries.hiltAndroid
+    implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
+    kapt dependencyInjectionLibraries.hiltAndroidCompiler
+    kapt dependencyInjectionLibraries.hiltLifecycleViewmodel
+    annotationProcessor dependencyInjectionLibraries.hiltCompiler
+    implementation dependencyInjectionLibraries.hilt
+    implementation coroutineLibraries.coroutinesCore
+    implementation coroutineLibraries.coroutinesAndroid
+    implementation coroutineLibraries.coroutinesPlayServices
+    implementation networkLibraries.retrofit
+    implementation networkLibraries.converterGson
+    implementation networkLibraries.loggingInterceptor
+    implementation networkLibraries.converterScalars
+    implementation networkLibraries.gson
+
+    // TODO: use CameraX by android. Added for testing
+    implementation 'com.github.natario1:cameraview:2.7.1'
+
+    // dependency for exoplayer
+    implementation 'com.google.android.exoplayer:exoplayer:2.18.4'
+    implementation 'com.google.android.exoplayer:exoplayer-core:2.18.4'
+    implementation 'com.google.android.exoplayer:exoplayer-dash:2.18.4'
+    implementation 'com.google.android.exoplayer:exoplayer-hls:2.18.4'
+    implementation 'com.google.android.exoplayer:exoplayer-smoothstreaming:2.18.4'
+    implementation 'com.google.android.exoplayer:exoplayer-ui:2.18.4'
+
+    testImplementation testLibraries.junit
+    androidTestImplementation androidTestLibraries.junit
+    androidTestImplementation androidTestLibraries.espresso
+}

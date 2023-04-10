@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgColor">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glHCenter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glVCenter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        style="@style/text.large"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/spacing_larger"
+        android:layout_marginBottom="@dimen/spacing_xxxl"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@id/glHCenter" />
+
+    <TextView
+        android:id="@+id/tvMessage"
+        style="@style/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/spacing_larger"
+        android:layout_marginTop="@dimen/spacing_xxxl"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/glHCenter" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCta1"
+        android:layout_width="@dimen/zero"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_larger"
+        android:layout_marginTop="@dimen/margin_large"
+        android:layout_marginEnd="@dimen/spacing_l"
+        android:textAllCaps="false"
+        android:textColor="@drawable/button_outline_text_color"
+        app:layout_constraintEnd_toStartOf="@id/glVCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvMessage"
+        app:strokeColor="@color/btnSuccess"
+        app:strokeWidth="@dimen/spacing_two" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCta2"
+        android:layout_width="@dimen/zero"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_l"
+        android:layout_marginTop="@dimen/margin_large"
+        android:layout_marginEnd="@dimen/spacing_larger"
+        android:backgroundTint="@color/btnSuccess"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/glVCenter"
+        app:layout_constraintTop_toBottomOf="@id/tvMessage"
+        app:strokeWidth="@dimen/spacing_two" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

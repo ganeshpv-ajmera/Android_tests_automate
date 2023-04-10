@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobileInputLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgColor"
+    tools:context=".ui.fragments.signup.signupwithmobilenumber.SignUpWithMobileNumberFragment">
+
+    <include
+        android:id="@+id/topNavHandleSignUpMobileId"
+        layout="@layout/top_bar_navigation_reuse_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/backStackTopMargin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/signUpMobileTxtId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/signUp_margin_horizontal"
+        android:layout_marginTop="32dp"
+        android:text="@string/signUpTxt"
+        android:letterSpacing="0.01"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topNavHandleSignUpMobileId" />
+
+
+    <TextView
+        android:id="@+id/enterMobileId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="@dimen/signUp_margin_horizontal"
+        android:text="@string/signUpMobileTxt"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/signUpMobileTxtId"
+        app:layout_constraintStart_toStartOf="@+id/signUpMobileTxtId"
+        app:layout_constraintTop_toBottomOf="@+id/signUpMobileTxtId" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/mobileTxtInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginHorizontal="@dimen/signUp_margin_horizontal"
+        android:textColorHint="@color/descTextColor"
+        app:boxStrokeWidth="1dp"
+        app:boxBackgroundColor="@color/bgColor"
+        app:boxStrokeErrorColor="@color/errorColor"
+        app:errorEnabled="true"
+        app:errorIconDrawable="@null"
+        app:errorTextColor="@color/errorColor"
+        app:helperTextTextColor="@color/white"
+        app:hintTextColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/signUpNextMobileId"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enterMobileId">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/mobileNumberId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="src_atop"
+            android:hint="@string/signUpMobileHint"
+            android:letterSpacing="0.02"
+            android:inputType="number"
+            android:lineSpacingExtra="4sp"
+            android:maxLength="10"
+            android:textColor="@color/white"
+            android:textColorHint="@color/descTextColor"
+            android:textCursorDrawable="@null"
+            android:textIsSelectable="true"
+            android:textSize="@dimen/input_txt_size"
+            app:textInputLayoutFocusedRectEnabled="true" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/signUpNextMobileId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="@dimen/signUp_margin_horizontal"
+        android:backgroundTint="@drawable/next_button_selector"
+        android:text="@string/signUpBtnSendOtpTxt"
+        android:enabled="false"
+        android:textAllCaps="false"
+        android:textColor="@color/signUpBtnTxt"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/mobileTxtInputLayout"
+        app:layout_constraintStart_toStartOf="@+id/mobileTxtInputLayout"
+        app:layout_constraintTop_toBottomOf="@+id/mobileTxtInputLayout"
+        tools:ignore="HardcodedText,VisualLintButtonSize" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

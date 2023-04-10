@@ -1,0 +1,57 @@
+name: Android Build and Deployment Pipeline
+
+on:
+  push:
+    branches:
+      - 'development'
+      - 'stage'
+
+jobs:
+  build:
+    name: Setup Environment and build
+    runs-on: ubuntu-latest
+    environment: "${{ github.ref_name }}"
+    
+    steps:
+      - name: Checkout the code to specific branch
+        uses: actions/checkout@v3
+
+      - name: Set up JDK
+        uses: actions/setup-java@v1
+        with:
+          distribution: 'oracle'
+          java-version: '11'
+                
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v2
+            
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
+      - name: Generate app bundle
+        run: ./gradlew bundleRelease
+
+      - name: Add keystore
+        run: |
+          echo "${{ secrets.KEY_STORE }}" > iterate.asc
+          gpg -d --passphrase "${{ secrets.KEY_STORE_DECRYPT_PASS }}" --batch iterate.asc > app/iterate
+        
+      - name: Sign app bundle 
+        run: |
+          sudo apt install apksigner
+          apksigner sign --ks app/iterate --ks-pass pass:${{secrets.KEY_STORE_PASSWORD}} \
+          --key-pass pass:${{secrets.KEY_PASSWORD}} --ks-key-alias ${{vars.ALIAS}} \
+          --min-sdk-version 21 --v2-signing-enabled true ${{ vars.RELEASE_FILE_PATH }} 
+  
+      - name: Create service_account.json
+        run: echo '${{ secrets.SERVICE_ACCOUNT_JSON }}' > service_account.json
+      
+      - name: Deploy to Play Store
+        uses: r0adkll/upload-google-play@v1
+        with:
+          serviceAccountJson: service_account.json
+          packageName: ${{ vars.APP_ID }}
+          releaseFiles: ${{ vars.RELEASE_FILE_PATH }}
+          track: ${{vars.TRACK}}
+          status: ${{vars.STATUS}}
+          inAppUpdatePriority: 0

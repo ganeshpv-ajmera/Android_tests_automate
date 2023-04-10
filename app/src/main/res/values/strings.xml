@@ -1,0 +1,66 @@
+<resources>
+    <string name="action_search">Search</string>
+    <string name="action_notification">Notification</string>
+    <string name="app_name">Aop</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="title_activity_splash_screen">SplashScreen</string>
+    <!-- Screens name-->
+    <string name="home_screen_title">ACADEMY OF POP</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Home Screen-->
+    <string name="bookmark_text">10K</string>
+    <string name="home_screen_title1">5th take’s the charm. #danceclass #fluid #lesson2 #groove</string>
+    <string name="comments_text">20K</string>
+    <string name="learn_it_button_text">Learn It</string>
+    <string name="try_it_button_text">Try It</string>
+    <string name="bottom_navigation_home">Home</string>
+    <string name="bottom_navigation_discover">Discover</string>
+    <string name="bottom_navigation_new_post">New Post</string>
+    <string name="bottom_navigation_learn">Learn</string>
+    <string name="bottom_navigation_profile">Profile</string>
+    <!-- Discover Screen-->
+    <string name="profile_name">"Profile name"</string>
+    <string name="view_more">"View More"</string>
+    <!-- SignUp Screen-->
+    <string name="signUp">Sign Up</string>
+    <string name="signUp_heading">Sign up for Academy of Pop</string>
+    <string name="signUpText">Use Mobile Number</string>
+    <string name="alreadyLoginTxt">
+Already have an account?
+<a style="color:#FF000000" href="">Log In</a>
+</string>
+    <string name="signUpTxt">What’s Your Mobile Number?</string>
+    <string name="when_is_your_birthday">When\'s Your Birthday</string>
+    <string name="signUpMobileTxt">Please enter your mobile number so we know where to contact you.</string>
+    <string name="signUpTxt1">When’s Your Birthday?</string>
+    <string name="birthday">Birthday</string>
+    <string name="signUpDesc">This won’t be shared publicly</string>
+    <string name="signUpMobileHint">Mobile Number</string>
+    <string name="signUpVerifyOtpTitle">Verify Your Mobile Number</string>
+    <string name="signUpVerifyTxt">A 6-digit code was sent to </string>
+    <string name="resendTxt">Resend Code</string>
+    <string name="wrongNumTxt">Wrong Phone Number?</string>
+    <string name="signUpBtnSendOtpTxt">Send Code</string>
+    <string name="create_username">Create Username</string>
+    <string name="username_too_short">Username Too Short</string>
+    <string name="next">Next</string>
+    <!-- Terms and condition -->
+    <string name="disclaimerTxt">By continuing, you agree to our Terms of Service and acknowledge that you have read our Privacy Policy.</string>
+    <string name="termsOfService">TERMS OF SERVICE</string>
+    <string name="privacyPolicy">PRIVACY POLICY</string>
+    <string name="backStackTitle">Title</string>
+    <string name="resend_otp_timer">%1$ds</string>
+    <string name="resend_otp_timer_start_time">60s</string>
+    <string name="invalid_mobile_number">Invalid mobile number</string>
+
+    <string name="account_created_successfully_title">Account Created Successfully!</string>
+    <string name="account_created_successfully_message">Complete your profile to let people know who you are!</string>
+    <string name="account_created_successfully_cta1_text">Go to Home</string>
+    <string name="account_created_successfully_cta2_text">Go to Profile</string>
+    <string name="username">\@%1$s</string>
+    <string name="invalid_user_age">You must be at least 13 years old to create an account.</string>
+    <string name="username_already_taken">Username already taken</string>
+    <string name="incorrect_verification_code">Verification code is incorrect. Tap resend code and try again</string>
+    <string name="mobile_number_already_exists">An account with this mobile number already exists.</string>
+</resources>

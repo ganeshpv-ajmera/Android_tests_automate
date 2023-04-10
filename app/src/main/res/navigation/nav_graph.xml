@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splash_fragment">
+
+    <action
+        android:id="@+id/toWebFragment"
+        app:destination="@id/navigation_web_fragment" />
+
+    <action
+        android:id="@+id/toFullScreenDialogFragment"
+        app:destination="@id/full_screen_dialog_fragment" />
+
+    <action
+        android:id="@+id/toDashBoardFragment"
+        app:destination="@id/navigation_dashboard" />
+
+
+    <fragment
+        android:id="@+id/full_screen_dialog_fragment"
+        android:name="com.aop.interplay.ui.fragments.fullscreendialog.FullScreenDialogFragment"
+        tools:layout="@layout/fragment_full_screen_dialog">
+
+        <argument
+            android:name="title"
+            android:defaultValue="null"
+            app:argType="string" />
+
+        <argument
+            android:name="message"
+            android:defaultValue="null"
+            app:argType="string" />
+
+        <argument
+            android:name="ctaText1"
+            android:defaultValue="null"
+            app:argType="string" />
+
+        <argument
+            android:name="ctaText2"
+            android:defaultValue="null"
+            app:argType="string" />
+
+        <argument
+            android:name="type"
+            app:argType="com.aop.interplay.data.FullScreenDialogType" />
+
+        <action
+            android:id="@+id/full_screen_dialog_fragment_to_dashBoard_fragment"
+            app:destination="@id/navigation_dashboard"
+            app:popUpTo="@id/navigation_dashboard" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/splash_fragment"
+        android:name="com.aop.interplay.ui.fragments.splash.SplashFragment"
+        tools:layout="@layout/fragment_splash">
+
+        <action
+            android:id="@+id/toDashboardFragment"
+            app:destination="@id/navigation_dashboard" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.aop.interplay.ui.fragments.dashboard.DashboardFragment"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_web_fragment"
+        android:name="com.aop.interplay.ui.fragments.web.WebFragment"
+        tools:layout="@layout/fragment_web">
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="url"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_signup"
+        android:name="com.aop.interplay.ui.fragments.signup.SignUpFragment"
+        tools:layout="@layout/fragment_sign_up" />
+
+    <fragment
+        android:id="@+id/navigation_signupMobile"
+        android:name="com.aop.interplay.ui.fragments.signup.signupwithmobilenumber.SignUpWithMobileNumberFragment"
+        tools:layout="@layout/fragment_sign_up_with_mobile_number" />
+
+
+    <fragment
+        android:id="@+id/navigation_singUpMobileOtpVerify"
+        android:name="com.aop.interplay.ui.fragments.signup.signupmobileverifyotp.SignUpMobileVerifyOtpFragment"
+        tools:layout="@layout/fragment_sign_up_mobile_verify_otp">
+        <action
+            android:id="@+id/action_navigation_singUpMobileOtpVerify_to_signUpBirthdayFragment"
+            app:destination="@id/signUpBirthdayFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="com.aop.interplay.ui.fragments.signup.WebViewFragment"
+        android:label="fragment_web_view"
+        tools:layout="@layout/fragment_web_view" />
+    <fragment
+        android:id="@+id/signUpBirthdayFragment"
+        android:name="com.aop.interplay.ui.fragments.signup.signupbirthday.SignUpBirthdayFragment"
+        android:label="fragment_sign_up_birthday"
+        tools:layout="@layout/fragment_sign_up_birthday" >
+        <action
+            android:id="@+id/action_signUpBirthdayFragment_to_signUpUsernameFragment2"
+            app:destination="@id/signUpUsernameFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpUsernameFragment2"
+        android:name="com.aop.interplay.ui.fragments.signup.signupusername.SignUpUserNameFragment"
+        android:label="fragment_sign_up_username"
+        tools:layout="@layout/fragment_sign_up_username" />
+</navigation>

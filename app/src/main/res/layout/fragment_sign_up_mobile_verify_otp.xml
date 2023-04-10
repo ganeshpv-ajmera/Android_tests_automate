@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobileInputLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgColor"
+    tools:context=".ui.fragments.signup.signupmobileverifyotp.SignUpMobileVerifyOtpFragment">
+
+    <include
+        android:id="@+id/topNavHandleSignUpMobileVerifyId"
+        layout="@layout/top_bar_navigation_reuse_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/backStackTopMargin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/signUpMobileVerifyTxtId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/signUp_margin_horizontal"
+        android:layout_marginTop="32dp"
+        android:text="@string/signUpVerifyOtpTitle"
+        android:textColor="@color/white"
+        android:textSize="@dimen/signUpTitleTxtSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topNavHandleSignUpMobileVerifyId" />
+
+
+    <TextView
+        android:id="@+id/verifyOtpId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/signUp_margin_horizontal"
+        android:layout_marginTop="20dp"
+        android:text="@string/signUpVerifyTxt"
+        android:textColor="@color/white"
+        android:textSize="@dimen/signup_txt_size"
+        app:layout_constraintEnd_toEndOf="@+id/signUpMobileVerifyTxtId"
+        app:layout_constraintStart_toStartOf="@+id/signUpMobileVerifyTxtId"
+        app:layout_constraintTop_toBottomOf="@+id/signUpMobileVerifyTxtId" />
+
+
+    <TextView
+        android:id="@+id/verification_error_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_xxs"
+        android:layout_marginEnd="@dimen/spacing_xxs"
+        android:text="@string/incorrect_verification_code"
+        android:textColor="@color/errorColor"
+        android:textSize="@dimen/size_s"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/otpViewId"
+        app:layout_constraintStart_toStartOf="@id/otpViewId"
+        app:layout_constraintTop_toBottomOf="@id/otpViewId"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/changeMobileNumberId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/wrongNumTxt"
+        android:textColor="@color/btnSuccess"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/otpViewId"
+        app:layout_constraintTop_toTopOf="@+id/resendCodeId" />
+
+    <TextView
+        android:id="@+id/resendCodeId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_larger"
+        android:enabled="false"
+        android:text="@string/resendTxt"
+        android:textColor="@color/textColor"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/otpViewId"
+        app:layout_constraintTop_toBottomOf="@+id/verification_error_tv" />
+
+    <TextView
+        android:id="@+id/resendCodeTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="60s"
+        android:textColor="@color/textColor"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/resendCodeId"
+        app:layout_constraintStart_toEndOf="@id/resendCodeId"
+        app:layout_constraintTop_toTopOf="@id/resendCodeId" />
+
+    <Button
+        android:id="@+id/signUpVerifyNextId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/signUp_margin_horizontal"
+        android:layout_marginTop="88dp"
+        android:backgroundTint="@drawable/next_button_selector"
+        android:enabled="false"
+        android:text="Next"
+        android:textAllCaps="false"
+        android:textColor="@color/signUpBtnTxt"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/resendCodeId"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/changeMobileNumberId"
+        app:layout_constraintTop_toBottomOf="@+id/otpViewId"
+        tools:ignore="HardcodedText,VisualLintButtonSize" />
+
+    <com.aop.interplay.custom_views.otpview.OtpView
+        android:id="@+id/otpViewId"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginHorizontal="@dimen/signUp_margin_horizontal"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/verifyOtpId" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
